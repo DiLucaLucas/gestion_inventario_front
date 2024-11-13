@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "primeflex/primeflex.css";
+import './index.css'
 
 // Componentes de PrimeReact
-import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
