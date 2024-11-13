@@ -3,13 +3,19 @@ import { Button } from "primereact/button";
 export const WelcomeScreen = () => {
   return (
     <div
-      className="bg-indigo-900 flex align-items-center justify-content-center"
+      className="bg-gray-900 flex align-items-center justify-content-center"
       style={{ height: "100vh" }}
     >
       <div className="text-center">
         <h1 className="text-teal-100 font-bold text-4xl">
           Proyecto Final: Laboratorio Full Stack + Programación Backend
         </h1>
+        {/* <p className="text-teal-100 m-4 text-2xl">
+          Somos Jeronimo Huincaman y Lucas Di Luca, estudiantes de Tecnicatura
+          Superior Full Stack en ITS. Este proyecto fue realizado con el
+          objetivo de demostrar los conocimientos adquiridos en Laboratorio Full
+          Stack y Programacion Backend
+        </p> */}
         <div className="flex align-items-center justify-content-center mt-4">
           <Button
             label="Iniciar Sesión"
