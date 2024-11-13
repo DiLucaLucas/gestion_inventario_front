@@ -1,21 +1,24 @@
-import { useState } from 'react'
-import './App.css'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "primeflex/primeflex.css";
+
+// Componentes de PrimeReact
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+
+// Componentes
+import WelcomeScreen from "./pages/WelcomeScreen/WelcomeScreen";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-      <h1>Proyecto Final Backend + Laboratorio Full Stack</h1>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Contador {count}
-        </button>
-      </div>
-    </>
-  )
+    // Contenedor principal que permite gestionar el enrutamiento
+    <Router>
+      {/* Routes: es el contenedor de las rutas de la app */}
+      <Routes>
+        <Route path="/" element={<WelcomeScreen />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
