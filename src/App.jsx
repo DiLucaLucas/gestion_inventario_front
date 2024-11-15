@@ -9,6 +9,7 @@ import "primeicons/primeicons.css";
 
 // Componentes
 import WelcomeScreen from "./pages/WelcomeScreen/WelcomeScreen";
+import LoginScreen from "./pages/LoginScreen/Loginscreen";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       {/* Routes: es el contenedor de las rutas de la app */}
       <Routes>
         <Route path="/" element={<WelcomeScreen />} />
+        <Route path="/login" element={<LoginScreen />} />        
       </Routes>
     </Router>
   );

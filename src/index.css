@@ -1,5 +1,56 @@
 body {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+}
+
+.background-image {
+  background-image: url("./assets/Content.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.bg-dark {
+  background-color: #3d3d3d;
+  color: #d9d9d9;
+}
+
+/* Texto */
+.text-light {
+  color: #d9d9d9;
+}
+
+.text-custom {
+  color: #4bffb3;
+}
+
+/* Botónes */
+.btn-success-custom {
+  background-color: #4bffb3;
+  color: #3d3d3d;
+  border: none;
+}
+
+.btn-success-custom:hover {
+  background-color: #3ed7a1;
+}
+
+.placeholder-bg {
+  background-color: #545454;
+  border: none;
+}
+
+.input-dark::placeholder {
+  background-color: #545454;
+  color: #d9d9d9;
+}
+
+.avatar-border {
+  border: 3px solid #4bffb3; 
+  color: #4bffb3;
+}
+
+.rounded {
+  border-radius: 30px;
 }
