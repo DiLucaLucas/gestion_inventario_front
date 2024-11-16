@@ -54,3 +54,26 @@ body {
 .rounded {
   border-radius: 30px;
 }
+
+/* ------------- Input de Contraseña --------------- */
+
+.p-inputtext {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background-color: #3d3d3d; 
+  color: #d9d9d9;
+  outline: none; 
+}
+
+.p-inputtext:focus {
+  border-color: #4bffb3;
+  box-shadow: 0 0 3px #4bffb3; 
+}
+
+.custom-password::placeholder {
+  font-size: 0.9rem;
+}
