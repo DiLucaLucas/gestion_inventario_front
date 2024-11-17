@@ -3,6 +3,10 @@ body {
   margin: 0;
 }
 
+.bg-dark-custom {
+  background-color: #3d3d3d;
+}
+
 .background-image {
   background-image: url("./assets/Content.png");
   background-size: cover;
@@ -12,7 +16,7 @@ body {
 }
 
 .bg-dark {
-  background-color: #3d3d3d;
+  background-color: #545454;
   color: #d9d9d9;
 }
 
@@ -53,6 +57,13 @@ body {
 
 .rounded {
   border-radius: 30px;
+}
+
+.add-rounded {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #545454;
 }
 
 /* ------------- Input de Contraseña --------------- */
