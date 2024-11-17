@@ -16,6 +16,7 @@ import LoginScreen from "./pages/LoginScreen/Loginscreen";
 import RegisterScreen from "./pages/RegisterScreen/RegisterScreen";
 import HomeScreen from "./pages/HomeScreen/HomeScreen";
 import ProductosScreen from "./pages/ProductosScreen/ProductosScreen";
+import UsuariosScreen from "./pages/UsuariosScreen/UsuariosScreen"
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/home" element={<HomeScreen />} />
         <Route path="/productos" element={<ProductosScreen />} />
+        <Route path="/usuarios" element={<UsuariosScreen />} />
+
       </Routes>
     </Router>
   );
