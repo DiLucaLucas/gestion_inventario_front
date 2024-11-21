@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuComponent from "../../components/MenuComponent";
 import TableComponent from "../../components/TableComponent/TableComponent";
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
 import { InputText } from "primereact/inputtext";
+import { Toast } from 'primereact/toast';
 import axios from "axios";
 
 export default function ProductosScreen() {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState([true]);
+
+    const toast = useRef(null);
 
     // Estado para menejar la visibilidad del modal
     const [visible, setVisible] = useState(false);
@@ -44,10 +47,22 @@ export default function ProductosScreen() {
             console.log('Datos enviados ✈️', payload);
             console.log(response.data);
 
+
+            toast.current.show({
+                severity: 'success',
+                summary: 'Producto Creado',
+                detail: `El producto fue creado con exito`,
+            });
             setVisible(false);
         }
         catch (error) {
             console.error(error);
+
+            toast.current.show({
+                severity: 'error',
+                summary: 'Error',
+                detail: `Ocurrio un error al crear el producto`,
+            });
         } finally {
             getProductos();
             setLoading(false);
@@ -62,6 +77,31 @@ export default function ProductosScreen() {
             console.error(error);
         }
     }
+
+
+    const handleDelete = async (id) => {
+        try {
+            setLoading(true);
+            await axios.delete(`http://localhost:3001/api/productos/${id}`);
+            setProductos((prevProductos) => prevProductos.filter((product) => product.idproducto !== id));
+
+            toast.current.show({
+                severity: 'success',
+                summary: 'Producto eliminado',
+                detail: `El producto con ID ${id} ha sido eliminado.`,
+            });
+        } catch (error) {
+            console.error('Error al eliminar el producto:', error);
+            toast.current.show({
+                severity: 'error',
+                summary: 'Error',
+                detail: 'No se pudo eliminar el producto.',
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
 
     useEffect(() => {
         fetch('http://localhost:3001/api/productos')
@@ -83,10 +123,22 @@ export default function ProductosScreen() {
         { field: 'descripcion', header: 'Descripcion' },
         { field: 'precio', header: 'Precio' },
         { field: 'cantidad', header: 'Cantidad' },
+        {
+            header: 'Acciones',
+            body: (rowData) => (
+                <Button
+                    label="Eliminar"
+                    icon="pi pi-trash"
+                    className="p-button-danger p-button-sm"
+                    onClick={() => handleDelete(rowData.idproducto)}
+                />
+            )
+        }
     ]
 
     return (
         <div className='min-h-screen flex flex-column bg-dark-custom'>
+            <Toast ref={toast} />
             <header className="sticky top-0 z-11">
                 <MenuComponent />
             </header>
