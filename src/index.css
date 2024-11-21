@@ -3,68 +3,79 @@ body {
   margin: 0;
 }
 
-.bg-dark-custom {
-  background-color: #3d3d3d;
+:root {
+  --success-green: #20CA82;
+  --primary-green: #4BFFB3;
+  --secondary-blue: #4B7DFF;
+  --text-white: #FFFFFF;
+  --text-gray: #D9D9D9;
+  --input-gray: #808080;
+  --card-gray: #545454;
+  --background-gray: #3D3D3D;
+  --almost-black: #222222;
 }
 
-.background-image {
-  background-image: url("./assets/Content.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+.text-almost-black {
+  color: var(--almost-black);
 }
 
-.bg-dark {
-  background-color: #545454;
-  color: #d9d9d9;
+.text-success-green {
+  color: var(--success-green);
 }
 
-/* Texto */
-.text-light {
-  color: #d9d9d9;
+.text-primary-green {
+  color: var(--primary-green);
 }
 
-.text-custom {
-  color: #4bffb3;
+.text-secondary-blue {
+  color: var(--secondary-blue);
 }
 
-/* Botónes */
-.btn-success-custom {
-  background-color: #4bffb3;
-  color: #3d3d3d;
-  border: none;
+.text-white {
+  color: var(--text-white);
 }
 
-.btn-success-custom:hover {
-  background-color: #3ed7a1;
+.text-gray {
+  color: var(--text-gray);
 }
 
-.placeholder-bg {
-  background-color: #545454;
-  border: none;
+/* Clases para colores de fondo */
+.bg-success-green:hover {
+  background-color: var(--success-green);
 }
 
-.input-dark::placeholder {
-  background-color: #545454;
-  color: #d9d9d9;
+.bg-primary-green {
+  background-color: var(--primary-green);
 }
 
-.avatar-border {
-  border: 3px solid #4bffb3; 
-  color: #4bffb3;
+.bg-secondary-blue {
+  background-color: var(--secondary-blue);
 }
 
-.rounded {
-  border-radius: 30px;
+.bg-white {
+  background-color: var(--text-white);
 }
 
-.add-rounded {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: #545454;
+.bg-gray {
+  background-color: var(--text-gray);
 }
+
+.bg-input-gray {
+  background-color: var(--input-gray);
+}
+
+.bg-card-gray {
+  background-color: var(--card-gray);
+}
+
+.bg-background-gray {
+  background-color: var(--background-gray);
+}
+
+.bg-almost-black {
+  background-color: var(--almost-black);
+}
+
 
 /* ------------- Input de Contraseña --------------- */
 
@@ -88,3 +99,14 @@ body {
 .custom-password::placeholder {
   font-size: 0.9rem;
 }
+
+.custom-menubar {
+  background-color: var(--primary-green);
+  color: var(--text-white);
+  font-size: 1.2rem;
+  padding: 6px;
+  font-weight: bold;
+  border: none; 
+  border-radius: 0;
+}
+
