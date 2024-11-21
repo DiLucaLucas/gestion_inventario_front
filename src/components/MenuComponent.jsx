@@ -20,6 +20,11 @@ export default function MenuComponent() {
             label: 'Productos',
             icon: 'pi pi-box',
             command: () => navigate('/productos'),
+        },
+        {
+            label: 'Logout',
+            icon: 'pi pi-sign-out',
+            command: () => navigate('/'),
         }
     ];
 
