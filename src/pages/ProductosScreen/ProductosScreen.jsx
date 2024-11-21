@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import MenuComponent from "../../components/MenuComponent";
 import TableComponent from "../../components/TableComponent/TableComponent";
 import { Button } from "primereact/button";
-import { Dialog } from "primereact/dialog";
-import { InputText } from "primereact/inputtext";
 import { Toast } from 'primereact/toast';
 import axios from "axios";
+import ModalComponent from "../../components/ModalComponent/ModalComponent";
 
 export default function ProductosScreen() {
     const [productos, setProductos] = useState([]);
@@ -147,67 +146,14 @@ export default function ProductosScreen() {
                 <Button label="Nuevo Producto" icon="pi pi-plus" onClick={() => setVisible(true)} />
 
                 <div className="mb-2">
-                    {/* Modal */}
-                    <Dialog
-                        header="Agregar Producto"
+
+                    <ModalComponent
                         visible={visible}
-                        style={{ width: '30vw' }}
                         onHide={() => setVisible(false)}
-                    >
-                        {/* Formulario */}
-                        <div className="p-fluid">
-                            <div className="p-field">
-                                <label htmlFor="codigo_interno">Codigo interno</label>
-                                <InputText
-                                    id="codigo_interno"
-                                    name="codigo_interno"
-                                    value={formData.codigo_interno}
-                                    onChange={handleChange}
-                                    placeholder="Ingresa el codigo interno"
-                                />
-                            </div>
-
-                            <div className="p-field">
-                                <label htmlFor="descripcion">Descripcion del Producto</label>
-                                <InputText
-                                    id="descripcion"
-                                    name="descripcion"
-                                    value={formData.descripcion}
-                                    onChange={handleChange}
-                                    placeholder="Ingresa el nombre"
-                                />
-                            </div>
-
-                            <div className="p-field">
-                                <label htmlFor="cantidad">Cantidad</label>
-                                <InputText
-                                    id="cantidad"
-                                    name="cantidad"
-                                    value={formData.cantidad}
-                                    onChange={handleChange}
-                                    placeholder="Ingresa el Cantidad"
-                                />
-                            </div>
-
-                            <div className="p-field">
-                                <label htmlFor="precio">Precio</label>
-                                <InputText
-                                    id="precio"
-                                    name="precio"
-                                    value={formData.precio}
-                                    onChange={handleChange}
-                                    placeholder="Ingresa el precio"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Botones del modal */}
-                        <div>
-                            <Button label="Cancelar" className="p-button-text" onClick={() => setVisible(false)} />
-                            <Button label="Guardar" className="p-button-primary" onClick={handleSubmit} />
-                        </div>
-                    </Dialog>
-                </div>
+                        formData={formData}
+                        onChange={handleChange}
+                        onSubmit={handleSubmit}
+                    />                </div>
 
                 <TableComponent data={productos} columns={productColumns} loading={loading} />
             </main>
