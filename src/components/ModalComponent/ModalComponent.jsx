@@ -9,14 +9,15 @@ export default function ModalComponent({ visible, onHide, formData, onChange, on
         <Dialog
             header="Agregar Producto"
             visible={visible}
-            style={{ width: '30vw' }}
+            style={{ width: '50vw' }}
             onHide={onHide}
+            className='custom-modal'
         >
             {/* Formulario */}
             <div className="p-fluid">
                 <div className="p-field">
-                    <label htmlFor="codigo_interno">Código Interno</label>
                     <InputText
+                        className='input'
                         id="codigo_interno"
                         name="codigo_interno"
                         value={formData.codigo_interno}
@@ -26,8 +27,8 @@ export default function ModalComponent({ visible, onHide, formData, onChange, on
                 </div>
 
                 <div className="p-field">
-                    <label htmlFor="descripcion">Descripción del Producto</label>
                     <InputText
+                        className='input'
                         id="descripcion"
                         name="descripcion"
                         value={formData.descripcion}
@@ -36,9 +37,9 @@ export default function ModalComponent({ visible, onHide, formData, onChange, on
                     />
                 </div>
 
-                <div className="p-field">
-                    <label htmlFor="cantidad">Cantidad</label>
+                <div className="">
                     <InputText
+                        className='input'
                         id="cantidad"
                         name="cantidad"
                         value={formData.cantidad}
@@ -48,8 +49,8 @@ export default function ModalComponent({ visible, onHide, formData, onChange, on
                 </div>
 
                 <div className="p-field">
-                    <label htmlFor="precio">Precio</label>
                     <InputText
+                        className='input'
                         id="precio"
                         name="precio"
                         value={formData.precio}
@@ -60,9 +61,9 @@ export default function ModalComponent({ visible, onHide, formData, onChange, on
             </div>
 
             {/* Botones del modal */}
-            <div>
-                <Button label="Cancelar" className="p-button-text" onClick={onHide} />
-                <Button label="Guardar" className="p-button-primary" onClick={onSubmit} />
+            <div className='flex justify-content-end mt-4'>
+                <Button label='Cancelar' severity='danger' className="mr-2"/>
+                <Button label="Guardar" severity='info'  onClick={onSubmit} />
             </div>
         </Dialog>
     );
