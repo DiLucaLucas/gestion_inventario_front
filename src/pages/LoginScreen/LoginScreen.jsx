@@ -26,17 +26,17 @@ export default function LoginScreen() {
   };
   
   return (
-    <div className="bg-almost-black flex justify-content-center align-items-center min-h-screen">
-      <div className="bg-background-gray p-6 w-80 border-round-lg">
+    <div className="bg-gray-900 flex justify-content-center align-items-center min-h-screen">
+      <div className="bg-white p-6 w-80 border-round-lg">
         <div className="flex flex-column align-items-center mb-4">
           <Avatar
             icon="pi pi-user"
-            className="bg-primary-green"
+            className="text-black bg-white mr-2"
             size="xlarge"
             shape="circle"
           />
-          <h3 className="font-bold text-success-green text-3xl">¡Iniciar Sesión!</h3>
-          <p className="text-center font-bold mt-0 text-white w-full text-lg">
+          <h3 className="font-bold text-black text-4xl">¡Iniciar Sesión!</h3>
+          <p className="text-center font-bold mt-0 text-black w-full text-lg">
             Ingresá tus datos para iniciar sesión en tu cuenta.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function LoginScreen() {
           <InputText
             id="email"
             type="text"
-            className="w-full p-inputtext p-component p-3"
+            className="w-full input p-3"
             placeholder="Ingresa tu correo"
             value={credentials.username}
             onChange={(e) =>
@@ -57,7 +57,7 @@ export default function LoginScreen() {
             id="password"
             type="password"
             placeholder="Contraseña"
-            className="w-full p-inputtext p-component mt-4 p-3"
+            className="w-full mt-4 p-3"
             value={credentials.password}
             onChange={(e) =>
               setCredentials({ ...credentials, password: e.target.value })
@@ -65,11 +65,11 @@ export default function LoginScreen() {
           />
         </div>
 
-        <div className="flex justify-content-center mt-4 text-white font-bold">
+        <div className="flex justify-content-center mt-4 text-black font-bold">
           No tienes cuenta?
           <a
-            href="#"
-            className="ml-2 text-custom text-sm no-underline text-primary-green font-bold hover: text-success-green"
+            href="/register"
+            className="ml-2 text-blue-500 text-sm no-underline font-bold hover:text-blue-300"
           >
             Registrate
           </a>
@@ -77,7 +77,7 @@ export default function LoginScreen() {
 
         <Button
           label="Ingresar"
-          className="w-full font-bold text-almost-black bg-primary-green border-none p-3 mt-4 bg-success-green border-round-lg"
+          className="w-full font-bold border-none p-3 mt-4 border-round-lg"
           onClick={handleLogin}
         />
       </div>
