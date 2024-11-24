@@ -27,27 +27,27 @@ export default function RegisterScreen() {
   };
 
   return (
-    <div className="background-image flex align-items-center justify-content-center min-h-screen">
-      <div className="flex flex-column bg-dark p-4 w-full rounded sm:w-25rem">
-        <div className="flex flex-column align-items-center mb-4 mt-4">
+    <div className="bg-gray-900 flex justify-content-center align-items-center h-screen">
+      <div className="bg-white p-6 w-80 border-round-lg">
+        <div className="flex flex-column align-items-center mb-4">
           <Avatar
             icon="pi pi-user"
-            className="avatar-border bg-dark mb-3"
+            className="text-black bg-gray-400 mr-2"
             size="xlarge"
             shape="circle"
           />
-          <h3 className="font-bold text-custom">¡Registrate!</h3>
-          <p className="text-center font-bold mt-0 text-light w-full">
+          <h3 className="font-bold text-4xl">¡Regístrate!</h3>
+          <p className="text-center font-bold mt-0 text-black w-full text-lg">
             ¡Vamos a crear tu cuenta! Ingresa tus datos.
           </p>
         </div>
 
         <form onSubmit={handleRegister}>
-          <div className="flex flex-column text-center gap-4">
+          <div className="flex flex-column align-items-center w-full">
             <InputText
               id="nombre"
               type="text"
-              className="w-full mt-2"
+              className="w-full p-inputtext p-component p-3 mb-3"
               placeholder="Ingresa tu Nombre"
               value={formData.username}
               onChange={handleChange}
@@ -55,31 +55,40 @@ export default function RegisterScreen() {
             />
             <InputText
               id="email"
-              type="text"
-              className="w-full mt-2"
+              type="email"
+              className="w-full p-inputtext p-component p-3 mb-3"
               placeholder="Ingresa tu Correo"
               value={formData.email}
               onChange={handleChange}
               required
             />
+            <InputText
+              id="password"
+              type="password"
+              placeholder="Contraseña"
+              className="w-full p-inputtext p-component p-3 mb-3"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
           </div>
-
-          <input
-            id="password"
-            type="password"
-            placeholder="Contraseña"
-            className="p-inputtext p-component w-full custom-password mt-4"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
 
           <Button
             label="Crear cuenta"
-            className="w-full p-button-success mt-6 btn-success-custom animate-width animation-duration-3000 animation-iteration-infinite"
+            className="w-full font-bold border-none p-3 mt-4 border-round-lg"
             onClick={handleRegister}
           />
         </form>
+
+        <div className="flex justify-content-center mt-4 text-black font-bold">
+          ¿Ya tienes cuenta?
+          <a
+            href="/login"
+            className="ml-2 text-custom text-sm no-underline text-blue-500 font-bold hover:text-blue-600"
+          >
+            Inicia sesión
+          </a>
+        </div>
       </div>
     </div>
   );
