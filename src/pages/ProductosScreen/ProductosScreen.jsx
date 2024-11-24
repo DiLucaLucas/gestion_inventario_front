@@ -136,26 +136,42 @@ export default function ProductosScreen() {
     ]
 
     return (
-        <div className='min-h-screen flex flex-column bg-dark-custom'>
+        <div className="min-h-screen flex flex-column">
             <Toast ref={toast} />
+            {/* Menú */}
             <header className="sticky top-0 z-11">
                 <MenuComponent />
             </header>
-            <main className="flex-1 pt-6 pr-4 pl-4 overflow-auto">
-                {/* Botón para abrir el modal */}
-                <Button label="Nuevo Producto" icon="pi pi-plus" onClick={() => setVisible(true)} />
 
-                <div className="mb-2">
+            {/* Contenido principal */}
+            <main className="flex-1 flex flex-column align-items-center justify-content-center p-4">
+                {/* Botón de Nuevo Producto */}
+                <div className="w-full flex justify-content-start mb-4">
+                    <Button
+                        label="Nuevo Producto"
+                        icon="pi pi-plus"
+                        onClick={() => setVisible(true)}
+                        className="button-primary"
+                    />
+                </div>
 
-                    <ModalComponent
-                        visible={visible}
-                        onHide={() => setVisible(false)}
-                        formData={formData}
-                        onChange={handleChange}
-                        onSubmit={handleSubmit}
-                    />                </div>
+                {/* Tabla centrada */}
+                <div className="w-full max-w-5xl">
+                    <TableComponent
+                        data={productos}
+                        columns={productColumns}
+                        loading={loading}
+                    />
+                </div>
 
-                <TableComponent data={productos} columns={productColumns} loading={loading} />
+                {/* Modal */}
+                <ModalComponent
+                    visible={visible}
+                    onHide={() => setVisible(false)}
+                    formData={formData}
+                    onChange={handleChange}
+                    onSubmit={handleSubmit}
+                />
             </main>
         </div>
     );
