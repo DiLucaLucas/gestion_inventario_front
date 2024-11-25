@@ -1,108 +1,10 @@
+
 body {
   padding: 0;
   margin: 0;
 }
 
-:root {
-  --success-green: #20CA82;
-  --primary-green: #4BFFB3;
-  --secondary-blue: #4B7DFF;
-  --text-white: #FFFFFF;
-  --text-gray: #D9D9D9;
-  --input-gray: #808080;
-  --card-gray: #545454;
-  --background-gray: #3D3D3D;
-  --almost-black: #222222;
-}
-
-.text-almost-black {
-  color: var(--almost-black);
-}
-
-.text-success-green {
-  color: var(--success-green);
-}
-
-.text-primary-green {
-  color: var(--primary-green);
-}
-
-.text-secondary-blue {
-  color: var(--secondary-blue);
-}
-
-.text-white {
-  color: var(--text-white);
-}
-
-.text-gray {
-  color: var(--text-gray);
-}
-
-/* Clases para colores de fondo */
-.bg-success-green:hover {
-  background-color: var(--success-green);
-}
-
-.bg-primary-green {
-  background-color: var(--primary-green);
-}
-
-.bg-secondary-blue {
-  background-color: var(--secondary-blue);
-}
-
-.bg-white {
-  background-color: var(--text-white);
-}
-
-.bg-gray {
-  background-color: var(--text-gray);
-}
-
-.bg-input-gray {
-  background-color: var(--input-gray);
-}
-
-.bg-card-gray {
-  background-color: var(--card-gray);
-}
-
-.bg-background-gray {
-  background-color: var(--background-gray);
-}
-
-.bg-almost-black {
-  background-color: var(--almost-black);
-}
-
-
-/* ------------- Input de Contraseña --------------- */
-
-.p-inputtext {
-  display: block;
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  background-color: #3d3d3d; 
-  color: #d9d9d9;
-  outline: none; 
-}
-
-.p-inputtext:focus {
-  border-color: #4bffb3;
-  box-shadow: 0 0 3px #4bffb3; 
-}
-
-.custom-password::placeholder {
-  font-size: 0.9rem;
-}
-
 .custom-menubar {
-  background-color: var(--primary-green);
-  color: var(--text-white);
   font-size: 1.2rem;
   padding: 6px;
   font-weight: bold;
@@ -110,3 +12,18 @@ body {
   border-radius: 0;
 }
 
+.custom-modal .p-dialog-header {
+  background-color: #4B7DFF;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  color: #808080;
+}
