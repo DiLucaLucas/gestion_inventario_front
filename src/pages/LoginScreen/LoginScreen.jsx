@@ -45,8 +45,8 @@ export default function LoginScreen() {
           <InputText
             id="email"
             type="text"
-            className="w-full input p-3"
-            placeholder="Ingresa tu correo"
+            className="w-full p-inputtext p-component p-3"
+            placeholder="admin"
             value={credentials.username}
             onChange={(e) =>
               setCredentials({ ...credentials, username: e.target.value })
@@ -56,8 +56,8 @@ export default function LoginScreen() {
           <InputText
             id="password"
             type="password"
-            placeholder="Contraseña"
-            className="w-full mt-4 p-3"
+            placeholder="1234"
+            className="w-full p-inputtext p-component mt-4 p-3"
             value={credentials.password}
             onChange={(e) =>
               setCredentials({ ...credentials, password: e.target.value })
