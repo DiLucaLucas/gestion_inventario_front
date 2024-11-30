@@ -117,12 +117,13 @@ export default function ProductosScreen() {
     }, []);
 
     const productColumns = [
-        { field: 'idproducto', header: 'ID' },
-        { field: 'codigo_interno', header: 'Codigo Interno' },
-        { field: 'descripcion', header: 'Descripcion' },
-        { field: 'precio', header: 'Precio' },
-        { field: 'cantidad', header: 'Cantidad' },
+        { field: 'idproducto', header: 'ID', type: null },
+        { field: 'codigo_interno', header: 'Codigo Interno', type: 'text' },
+        { field: 'descripcion', header: 'Descripcion', type: 'text' },
+        { field: 'precio', header: 'Precio', type: 'number' },
+        { field: 'cantidad', header: 'Cantidad', type: 'number' },
         {
+            field: 'acciones',
             header: 'Acciones',
             body: (rowData) => (
                 <Button
@@ -171,6 +172,7 @@ export default function ProductosScreen() {
                     formData={formData}
                     onChange={handleChange}
                     onSubmit={handleSubmit}
+                    params={productColumns}
                 />
             </main>
         </div>
