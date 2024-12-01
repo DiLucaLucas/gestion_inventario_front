@@ -139,13 +139,14 @@ export default function ProductosScreen() {
     return (
         <div className="min-h-screen flex flex-column">
             <Toast ref={toast} />
+
             {/* Menú */}
-            <header className="sticky top-0 z-11">
+            <header className="sticky top-0 z-5">
                 <MenuComponent />
             </header>
 
             {/* Contenido principal */}
-            <main className="flex-1 flex flex-column align-items-center justify-content-center p-4">
+            <main className="flex-1 flex flex-column align-items-center p-4">
                 {/* Botón de Nuevo Producto */}
                 <div className="w-full flex justify-content-start mb-4">
                     <Button
@@ -173,6 +174,7 @@ export default function ProductosScreen() {
                     onChange={handleChange}
                     onSubmit={handleSubmit}
                     params={productColumns}
+                    title='Agregar Producto'
                 />
             </main>
         </div>
