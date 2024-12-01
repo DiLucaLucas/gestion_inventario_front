@@ -3,11 +3,11 @@ import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 
-export default function ModalComponent({ visible, onHide, formData, onChange, onSubmit, params }) {
+export default function ModalComponent({ visible, onHide, formData, onChange, onSubmit, params, title }) {
 
     return (
         <Dialog
-            header="Agregar Producto"
+            header={title}
             visible={visible}
             style={{ width: '50vw' }}
             onHide={onHide}
@@ -18,7 +18,6 @@ export default function ModalComponent({ visible, onHide, formData, onChange, on
                 {
                     params.map((param) => {
                         if (param.header !== 'Acciones' && !param.field.startsWith('id')) {
-                            console.log(param)
                             return (
                                 <div key={param.field} className="p-field">
                                     <InputText
@@ -40,7 +39,7 @@ export default function ModalComponent({ visible, onHide, formData, onChange, on
 
             {/* Botones del modal */}
             <div className='flex justify-content-end mt-4'>
-                <Button label='Cancelar' severity='danger' className="mr-2" />
+                <Button label='Cancelar' severity='danger' className="mr-2" onClick={onHide}/>
                 <Button label="Guardar" severity='info' onClick={onSubmit} />
             </div>
         </Dialog>
