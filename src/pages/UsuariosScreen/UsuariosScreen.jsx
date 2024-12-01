@@ -37,12 +37,12 @@ export default function UsuariosScreen() {
             <Toast ref={toast} />
 
             {/* Menú */}
-            <header className="sticky top-0 z-11">
+            <header className="sticky top-0 z-5">
                 <MenuComponent />
             </header>
 
             {/* Contenido principal */}
-            <main className="flex-1 flex flex-column align-items-center justify-content-center p-4">
+            <main className="flex-1 flex flex-column align-items-center p-4">
                 {/* Botón de Nuevo Usuario */}
                 <div className="w-full flex justify-content-start mb-4">
                     <Button
